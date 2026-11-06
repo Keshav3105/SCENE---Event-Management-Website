@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Registrations &mdash; SCENE</title>
+  <meta name="description" content="View and manage all your campus event passes and reservations on SCENE.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Minimal Editorial Site Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-wordmark" aria-label="SCENE Homepage">
+        <span class="brand-title">SCENE<span class="brand-dot">.</span></span>
+        <span class="brand-tagline">Campus Event Culture</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="primary-navigation">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="registrations.html" class="nav-link active" aria-current="page">My Registrations</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Navigation Toggle -->
+      <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main id="main-content" class="main-content">
+    <section class="section-alt" style="padding: 3.5rem 0 2.5rem;">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 0;">
+          <span class="section-eyebrow">Pass Dashboard</span>
+          <h1 class="section-title">My Event Registrations</h1>
+          <p class="section-subtitle">Review active passes, verified entrance codes, or cancel reservations if your schedule changes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Registration Ticket Cards Grid -->
+        <div class="registrations-grid" id="registrations-list-container">
+          <!-- Ticket 1 -->
+          <article class="registration-card">
+            <div class="reg-card-header">
+              <span class="reg-id-badge">SCENE-2026-1042</span>
+              <span class="badge badge-tech">Technical</span>
+            </div>
+            
+            <div>
+              <h2 class="reg-event-title">InnovateX 2026: Campus Hackathon</h2>
+              <div style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.35rem; font-family: var(--font-sans);">
+                Registered on March 01, 2026 &bull; Confirmed Pass
+              </div>
+            </div>
+
+            <div class="reg-meta-box">
+              <div class="reg-detail-row">
+                <span>Attendee</span>
+                <span>Rahul Sharma</span>
+              </div>
+              <div class="reg-detail-row">
+                <span>Email</span>
+                <span>rahul.sharma@kiit.ac.in</span>
+              </div>
+              <div class="reg-detail-row">
+                <span>Contact</span>
+                <span>+91 9876543210</span>
+              </div>
+              <div class="reg-detail-row">
+                <span>Event Date</span>
+                <span>March 28, 2026 &bull; 09:00 AM</span>
+              </div>
+              <div class="reg-detail-row">
+                <span>Venue</span>
+                <span>Tech Complex Hall A</span>
+              </div>
+            </div>
+
+            <div class="reg-card-footer">
+              <button type="button" class="btn btn-subtle btn-sm" aria-label="Cancel registration for InnovateX 2026">
+                Cancel Pass
+              </button>
+            </div>
+          </article>
+
+          <!-- Ticket 2 -->
+          <article class="registration-card">
+            <div class="reg-card-header">
+              <span class="reg-id-badge">SCENE-2026-1098</span>
+              <span class="badge badge-cultural">Cultural</span>
+            </div>
+            
+            <div>
+              <h2 class="reg-event-title">Rhythm &amp; Rhapsody: Annual Gala</h2>
+              <div style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.35rem; font-family: var(--font-sans);">
+                Registered on March 03, 2026 &bull; Confirmed Pass
+              </div>
+            </div>
+
+            <div class="reg-meta-box">
+              <div class="reg-detail-row">
+                <span>Attendee</span>
+                <span>Rahul Sharma</span>
+              </div>
+              <div class="reg-detail-row">
+                <span>Email</span>
+                <span>rahul.sharma@kiit.ac.in</span>
+              </div>
+              <div class="reg-detail-row">
+                <span>Contact</span>
+                <span>+91 9876543210</span>
+              </div>
+              <div class="reg-detail-row">
+                <span>Event Date</span>
+                <span>April 04, 2026 &bull; 05:30 PM</span>
+              </div>
+              <div class="reg-detail-row">
+                <span>Venue</span>
+                <span>Open Air Amphitheatre</span>
+              </div>
+            </div>
+
+            <div class="reg-card-footer">
+              <button type="button" class="btn btn-subtle btn-sm" aria-label="Cancel registration for Rhythm &amp; Rhapsody">
+                Cancel Pass
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Minimal Editorial Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-wordmark">
+            <span class="brand-title">SCENE<span class="brand-dot">.</span></span>
+            <span class="brand-tagline">Campus Event Culture</span>
+          </div>
+          <p class="footer-desc">
+            An independent, photography-driven event discovery platform connecting student communities through arts, technology, and competition.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Browse Events</a></li>
+            <li><a href="registrations.html">My Registrations</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Tracks</h4>
+          <ul class="footer-links">
+            <li><a href="events.html?category=Technical">Technical</a></li>
+            <li><a href="events.html?category=Cultural">Cultural</a></li>
+            <li><a href="events.html?category=Sports">Sports</a></li>
+            <li><a href="events.html?category=Workshop">Workshops</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 SCENE &bull; Your campus. Your scene.</p>
+        <p>Web Designing Minor Assignment &bull; Built with HTML5, CSS3 &amp; Vanilla JS.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

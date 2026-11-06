@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5F0E7" />
+      <stop offset="100%" stop-color="#EAE3D6" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bgGrad)" />
+  <rect x="24" y="24" width="752" height="402" fill="none" stroke="#DDD5C7" stroke-width="1.5" stroke-dasharray="6 6" />
+  <g transform="translate(400, 190)" text-anchor="middle">
+    <!-- Camera/Ticket minimal glyph -->
+    <circle cx="0" cy="-30" r="32" fill="#FFFFFF" stroke="#C6532D" stroke-width="2" />
+    <circle cx="0" cy="-30" r="14" fill="#C6532D" opacity="0.85" />
+    <text y="25" fill="#211B18" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" letter-spacing="2">SCENE</text>
+    <text y="50" fill="#6E5D53" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" font-weight="500" letter-spacing="1.5">CAMPUS EVENT ARCHIVE</text>
+  </g>
+</svg>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events &mdash; SCENE</title>
+  <meta name="description" content="Browse, search, and discover all upcoming campus hackathons, arts galas, sports derbies, and workshops on SCENE.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Minimal Editorial Site Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-wordmark" aria-label="SCENE Homepage">
+        <span class="brand-title">SCENE<span class="brand-dot">.</span></span>
+        <span class="brand-tagline">Campus Event Culture</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="primary-navigation">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="events.html" class="nav-link active" aria-current="page">Events</a></li>
+          <li><a href="registrations.html" class="nav-link">My Registrations</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Navigation Toggle -->
+      <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main id="main-content" class="main-content">
+    <!-- Catalog Header & Toolbar -->
+    <section class="section-alt" style="padding: 3.5rem 0 2.5rem;">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 2rem;">
+          <span class="section-eyebrow">Campus Calendar</span>
+          <h1 class="section-title">All Campus Happenings</h1>
+          <p class="section-subtitle">Discover hackathons, exhibitions, sports championships, and creative masterclasses.</p>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="toolbar-wrap">
+          <div class="search-box-wrap">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search"
+                   id="event-search-input"
+                   class="search-input"
+                   placeholder="Search events by title or venue..."
+                   aria-label="Search events by title or venue">
+          </div>
+
+          <div class="filter-pills" role="toolbar" aria-label="Event category filters">
+            <button class="filter-pill active" data-category="All" type="button">All Events</button>
+            <button class="filter-pill" data-category="Technical" type="button">Technical</button>
+            <button class="filter-pill" data-category="Cultural" type="button">Cultural</button>
+            <button class="filter-pill" data-category="Sports" type="button">Sports</button>
+            <button class="filter-pill" data-category="Workshop" type="button">Workshops</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Catalog List -->
+    <section class="section">
+      <div class="container">
+        <div class="catalog-header-bar">
+          <span id="events-count-badge">Showing 4 featured campus events</span>
+          <span>Spring 2026 Season</span>
+        </div>
+
+        <!-- Event Cards Grid -->
+        <div class="events-grid" id="events-catalog-grid">
+          <!-- Card 1: Technical -->
+          <article class="event-card">
+            <div class="event-card-media">
+              <img src="assets/images/event-hackathon.jpg"
+                   alt="InnovateX 2026 Campus Hackathon"
+                   class="event-card-img"
+                   loading="lazy"
+                   data-fallback="assets/images/placeholder.svg">
+              <div class="event-card-badge-wrap">
+                <span class="badge badge-tech">Technical</span>
+              </div>
+            </div>
+            <div class="event-card-body">
+              <h2 class="event-card-title">InnovateX 2026: Campus Hackathon</h2>
+              <div class="event-meta-list">
+                <div class="event-meta-item">
+                  <svg class="event-meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>March 28, 2026 &bull; 09:00 AM</span>
+                </div>
+                <div class="event-meta-item">
+                  <svg class="event-meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Tech Innovation Complex, Hall A</span>
+                </div>
+              </div>
+              <p class="event-card-desc">
+                A 36-hour sprint bringing together student developers, designers, and innovators to build impactful campus solutions.
+              </p>
+              <div class="event-card-footer">
+                <span class="event-price-tag">Free Entry</span>
+                <a href="event-details.html?id=tech-01" class="btn btn-primary btn-sm">Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Cultural -->
+          <article class="event-card">
+            <div class="event-card-media">
+              <img src="assets/images/event-gala.jpg"
+                   alt="Rhythm &amp; Rhapsody Annual Gala"
+                   class="event-card-img"
+                   loading="lazy"
+                   data-fallback="assets/images/placeholder.svg">
+              <div class="event-card-badge-wrap">
+                <span class="badge badge-cultural">Cultural</span>
+              </div>
+            </div>
+            <div class="event-card-body">
+              <h2 class="event-card-title">Rhythm &amp; Rhapsody: Annual Gala</h2>
+              <div class="event-meta-list">
+                <div class="event-meta-item">
+                  <svg class="event-meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>April 04, 2026 &bull; 05:30 PM</span>
+                </div>
+                <div class="event-meta-item">
+                  <svg class="event-meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Open Air Amphitheatre</span>
+                </div>
+              </div>
+              <p class="event-card-desc">
+                An evening celebrating artistic expression with dance performances, classical and rock bands, and theatrical acts.
+              </p>
+              <div class="event-card-footer">
+                <span class="event-price-tag">Free Entry</span>
+                <a href="event-details.html?id=cult-01" class="btn btn-primary btn-sm">Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Sports -->
+          <article class="event-card">
+            <div class="event-card-media">
+              <img src="assets/images/event-sports.jpg"
+                   alt="Campus Premier League Football"
+                   class="event-card-img"
+                   loading="lazy"
+                   data-fallback="assets/images/placeholder.svg">
+              <div class="event-card-badge-wrap">
+                <span class="badge badge-sports">Sports</span>
+              </div>
+            </div>
+            <div class="event-card-body">
+              <h2 class="event-card-title">Campus Premier League: Football</h2>
+              <div class="event-meta-list">
+                <div class="event-meta-item">
+                  <svg class="event-meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>April 11, 2026 &bull; 03:00 PM</span>
+                </div>
+                <div class="event-meta-item">
+                  <svg class="event-meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>University Sports Complex &bull; Stadium 1</span>
+                </div>
+              </div>
+              <p class="event-card-desc">
+                Inter-department football championship with 16 departmental teams competing for victory and the annual cup.
+              </p>
+              <div class="event-card-footer">
+                <span class="event-price-tag">Free Entry</span>
+                <a href="event-details.html?id=sport-01" class="btn btn-primary btn-sm">Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Workshop -->
+          <article class="event-card">
+            <div class="event-card-media">
+              <img src="assets/images/cat-workshop.jpg"
+                   alt="Modern Web Development Workshop"
+                   class="event-card-img"
+                   loading="lazy"
+                   data-fallback="assets/images/placeholder.svg">
+              <div class="event-card-badge-wrap">
+                <span class="badge badge-workshop">Workshop</span>
+              </div>
+            </div>
+            <div class="event-card-body">
+              <h2 class="event-card-title">Fullstack AI Masterclass</h2>
+              <div class="event-meta-list">
+                <div class="event-meta-item">
+                  <svg class="event-meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>April 18, 2026 &bull; 10:00 AM</span>
+                </div>
+                <div class="event-meta-item">
+                  <svg class="event-meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Computer Labs &bull; Room 302</span>
+                </div>
+              </div>
+              <p class="event-card-desc">
+                Learn modern client-side architectures, API integration, and deployment workflows with industry practitioners.
+              </p>
+              <div class="event-card-footer">
+                <span class="event-price-tag">Free Entry</span>
+                <a href="event-details.html?id=work-01" class="btn btn-primary btn-sm">Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Minimal Editorial Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-wordmark">
+            <span class="brand-title">SCENE<span class="brand-dot">.</span></span>
+            <span class="brand-tagline">Campus Event Culture</span>
+          </div>
+          <p class="footer-desc">
+            An independent, photography-driven event discovery platform connecting student communities through arts, technology, and competition.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Browse Events</a></li>
+            <li><a href="registrations.html">My Registrations</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Tracks</h4>
+          <ul class="footer-links">
+            <li><a href="events.html?category=Technical">Technical</a></li>
+            <li><a href="events.html?category=Cultural">Cultural</a></li>
+            <li><a href="events.html?category=Sports">Sports</a></li>
+            <li><a href="events.html?category=Workshop">Workshops</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 SCENE &bull; Your campus. Your scene.</p>
+        <p>Web Designing Minor Assignment &bull; Built with HTML5, CSS3 &amp; Vanilla JS.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
