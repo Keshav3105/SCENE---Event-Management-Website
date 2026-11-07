@@ -263,35 +263,35 @@ function initMyRegistrationsDashboard() {
     }
 
     container.innerHTML = list.map(reg => `
-      <article class="registration-card" data-pass-id="${reg.id}">
+      <article class="registration-card" data-pass-id="${escapeHTML(reg.id)}">
         <div class="reg-card-header">
-          <span class="reg-id-badge">${reg.id}</span>
-          <span class="badge ${typeof getCategoryBadgeClass === 'function' ? getCategoryBadgeClass(reg.category) : 'badge-outline'}">${reg.category}</span>
+          <span class="reg-id-badge">${escapeHTML(reg.id)}</span>
+          <span class="badge ${typeof getCategoryBadgeClass === 'function' ? getCategoryBadgeClass(reg.category) : 'badge-outline'}">${escapeHTML(reg.category)}</span>
         </div>
         
         <div>
-          <h2 class="reg-event-title">${reg.eventTitle}</h2>
+          <h2 class="reg-event-title">${escapeHTML(reg.eventTitle)}</h2>
           <div style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.35rem; font-family: var(--font-sans);">
-            Reserved on ${reg.formattedRegisteredDate} &bull; Confirmed Pass
+            Reserved on ${escapeHTML(reg.formattedRegisteredDate)} &bull; Confirmed Pass
           </div>
         </div>
 
         <div class="reg-meta-box">
           <div class="reg-detail-row">
             <span>Attendee</span>
-            <span>${reg.attendeeName}</span>
+            <span>${escapeHTML(reg.attendeeName)}</span>
           </div>
           <div class="reg-detail-row">
             <span>Email</span>
-            <span>${reg.attendeeEmail}</span>
+            <span>${escapeHTML(reg.attendeeEmail)}</span>
           </div>
           <div class="reg-detail-row">
             <span>Contact</span>
-            <span>+91 ${reg.attendeePhone}</span>
+            <span>+91 ${escapeHTML(reg.attendeePhone)}</span>
           </div>
           <div class="reg-detail-row">
             <span>Event Date</span>
-            <span>${reg.eventDate}</span>
+            <span>${escapeHTML(reg.eventDate)}</span>
           </div>
           <div class="reg-detail-row">
             <span>Venue</span>
@@ -302,9 +302,9 @@ function initMyRegistrationsDashboard() {
         <div class="reg-card-footer">
           <button type="button"
                   class="btn btn-subtle btn-sm cancel-pass-trigger"
-                  data-pass-id="${reg.id}"
-                  data-event-title="${reg.eventTitle}"
-                  aria-label="Cancel pass for ${reg.eventTitle}">
+                  data-pass-id="${escapeHTML(reg.id)}"
+                  data-event-title="${escapeHTML(reg.eventTitle)}"
+                  aria-label="Cancel pass for ${escapeHTML(reg.eventTitle)}">
             Cancel Pass
           </button>
         </div>

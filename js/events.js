@@ -260,19 +260,19 @@ function getCategoryBadgeClass(category) {
 function renderEventCardHTML(event) {
   const badgeClass = getCategoryBadgeClass(event.category);
   return `
-    <article class="event-card" data-id="${event.id}">
+    <article class="event-card" data-id="${escapeHTML(event.id)}">
       <div class="event-card-media">
-        <img src="${event.image}"
-             alt="${event.title}"
+        <img src="${escapeHTML(event.image)}"
+             alt="${escapeHTML(event.title)}"
              class="event-card-img"
              loading="lazy"
              data-fallback="assets/images/placeholder.svg">
         <div class="event-card-badge-wrap">
-          <span class="badge ${badgeClass}">${event.category}</span>
+          <span class="badge ${badgeClass}">${escapeHTML(event.category)}</span>
         </div>
       </div>
       <div class="event-card-body">
-        <h2 class="event-card-title">${event.title}</h2>
+        <h2 class="event-card-title">${escapeHTML(event.title)}</h2>
         <div class="event-meta-list">
           <div class="event-meta-item">
             <svg class="event-meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -281,19 +281,19 @@ function renderEventCardHTML(event) {
               <line x1="8" y1="2" x2="8" y2="6"></line>
               <line x1="3" y1="10" x2="21" y2="10"></line>
             </svg>
-            <span>${event.datetimeDisplay}</span>
+            <span>${escapeHTML(event.datetimeDisplay)}</span>
           </div>
           <div class="event-meta-item">
             <svg class="event-meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
               <circle cx="12" cy="10" r="3"></circle>
             </svg>
-            <span>${event.venue}</span>
+            <span>${escapeHTML(event.venue)}</span>
           </div>
         </div>
-        <p class="event-card-desc">${event.shortDescription}</p>
+        <p class="event-card-desc">${escapeHTML(event.shortDescription)}</p>
         <div class="event-card-footer">
-          <span class="event-price-tag">${event.price}</span>
+          <span class="event-price-tag">${escapeHTML(event.price)}</span>
           <a href="event-details.html?id=${encodeURIComponent(event.id)}" class="btn btn-primary btn-sm">Details &rarr;</a>
         </div>
       </div>
@@ -309,11 +309,11 @@ function renderEventCardHTML(event) {
 function renderEmptyStateHTML(query = '', category = 'All') {
   let message = 'No upcoming campus events matched your current filters.';
   if (query && category !== 'All') {
-    message = `No events found matching &ldquo;${query}&rdquo; in the ${category} track.`;
+    message = `No events found matching &ldquo;${escapeHTML(query)}&rdquo; in the ${escapeHTML(category)} track.`;
   } else if (query) {
-    message = `No events found matching &ldquo;${query}&rdquo;. Try another keyword.`;
+    message = `No events found matching &ldquo;${escapeHTML(query)}&rdquo;. Try another keyword.`;
   } else if (category !== 'All') {
-    message = `No events are currently scheduled under the ${category} track.`;
+    message = `No events are currently scheduled under the ${escapeHTML(category)} track.`;
   }
 
   return `
