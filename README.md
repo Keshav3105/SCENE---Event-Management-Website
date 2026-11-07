@@ -67,10 +67,10 @@ No build step or package manager is required.
 
 - [x] **Milestone 1**: Scaffolding, repository setup, shared navigation, and initial README.
 - [x] **Milestone 2**: Complete SCENE Homepage redesign (warm ivory palette, asymmetrical collage hero, visual chronicle strip, curated editorial lineup, photo category grid).
-- [ ] **Milestone 3**: Redesign Events catalog, Event Details, and My Registrations pages with SCENE visual identity.
-- [ ] **Milestone 4**: Centralized event dataset (`js/events.js`) with fallback handling.
-- [ ] **Milestone 5**: Interactive search, category filters, and empty state.
-- [ ] **Milestone 6**: Dynamic Event Details lookup and graceful error handling.
+- [x] **Milestone 3**: Redesigned Events catalog, Event Details, and My Registrations pages with SCENE visual identity.
+- [x] **Milestone 4**: Centralized event dataset (`js/events.js`) with sample events and local image mapping.
+- [x] **Milestone 5**: Interactive search, category filters, combined filtering, URL query parameter syncing, and empty state.
+- [x] **Milestone 6**: Dynamic Event Details lookup (`?id=...`) and graceful invalid ID handling.
 - [ ] **Milestone 7**: Registration form validation and UX feedback.
 - [ ] **Milestone 8**: LocalStorage persistence, unique ID generation, and duplicate prevention.
 - [ ] **Milestone 9**: Registrations dashboard and cancellation management.
