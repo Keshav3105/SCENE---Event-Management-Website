@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initImageFallbacks();
   initThemeToggle();
   initScrollReveal();
+  initScrollProgress();
+  initBackToTop();
 });
 
 /**
@@ -133,3 +135,50 @@ function initImageFallbacks() {
     });
   });
 }
+
+/**
+ * Initializes the fixed scroll-progress indicator bar.
+ */
+function initScrollProgress() {
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) return;
+
+  function updateProgress() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = Math.min(pct, 100).toFixed(2) + '%';
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+}
+
+/**
+ * Initializes the floating back-to-top button.
+ * Shows after user scrolls 300px; smooth-scrolls to top on click.
+ */
+function initBackToTop() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  const THRESHOLD = 300;
+
+  function onScroll() {
+    if ((window.scrollY || document.documentElement.scrollTop) > THRESHOLD) {
+      btn.classList.add('is-visible');
+    } else {
+      btn.classList.remove('is-visible');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  btn.addEventListener('click', () => {
+    const prefersReduced = window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+  });
+}
+

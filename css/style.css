@@ -2299,3 +2299,115 @@ body,
     transform: none !important;
   }
 }
+
+/* ==========================================================================
+   Scroll Progress Indicator
+   ========================================================================== */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: var(--primary);
+  z-index: 200;
+  transition: width 80ms linear;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Back-to-Top Button
+   ========================================================================== */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 150;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-dark);
+  color: var(--text-inverse);
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity var(--transition-normal),
+              visibility var(--transition-normal),
+              transform var(--transition-normal),
+              background-color var(--transition-fast),
+              border-color var(--transition-fast);
+  box-shadow: var(--shadow-card);
+}
+
+#back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+#back-to-top:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+[data-theme="dark"] #back-to-top {
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  border-color: var(--border-subtle);
+}
+
+[data-theme="dark"] #back-to-top:hover {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+}
+
+/* ==========================================================================
+   Nav Link Focus Polish
+   ========================================================================== */
+.nav-link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Card-level keyboard focus ring for tab navigation */
+.event-card:focus-within,
+.flagship-event-card:focus-within,
+.supporting-event-card:focus-within {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Mobile: back-to-top clear of content
+   ========================================================================== */
+@media (max-width: 640px) {
+  #back-to-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+}
+
+/* Reduced motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  #back-to-top {
+    transition: opacity var(--transition-fast), visibility var(--transition-fast);
+    transform: none !important;
+  }
+
+  #scroll-progress {
+    transition: none;
+  }
+}
+
