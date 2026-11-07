@@ -4,7 +4,7 @@
 
 A modern, responsive, photography-driven event discovery and registration platform for university campus culture. Built for a Web Designing minor college assignment using semantic **HTML5**, **CSS3**, and **vanilla JavaScript (ES6+)**.
 
-- **Live Deployment**: [https://scene-events.netlify.app/](https://scene-events.netlify.app/)
+- **Live Deployment**: [https://scene-gray-gamma.vercel.app/](https://scene-gray-gamma.vercel.app/)
 - **GitHub Repository**: [https://github.com/Keshav3105/SCENE---Event-Management-Website](https://github.com/Keshav3105/SCENE---Event-Management-Website)
 
 ---
