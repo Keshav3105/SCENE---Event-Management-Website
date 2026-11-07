@@ -350,3 +350,30 @@ Completed: 7 November 2026
 - **Typography Variable Integrity**: Verified `--font-serif`, `--font-sans`, and `--font-mono` remain configured and referenced throughout CSS. (PASS)
 - **Phase 2 & Phase 3 Regressions**: Ran central event data tests, card rendering, category filtering, search, form validation, LocalStorage CRUD, collision resistance, and corrupt storage recovery tests. (ALL PASS)
 - **UI Integrity Suite**: Verified modal buttons, card footers, and HTML structure across all 4 pages. (PASS)
+
+
+## 14. Final Bug Fixes, UI/UX Enhancements, Full Regression & Documentation Completion
+
+Completed: 7 November 2026
+
+### What was completed:
+1. **Typography & Layout Stability Fix**:
+   - Switched font delivery to `&display=block` with `<link rel="preconnect">` in `<head>` of all 4 pages.
+   - Removed blocking `@import` from `css/style.css`.
+   - Increased `.section-subtitle` `max-width` to `660px` to prevent line-wrapping shifts on standard screens.
+2. **Event Details Content & Image Flickering Fix**:
+   - Replaced hardcoded static InnovateX content in `event-details.html` with neutral placeholders and SVG fallback image.
+   - Dynamically bound `#detail-price-badge` and event parameters inside `initEventDetailsPage()` in `js/events.js`.
+3. **Dark Mode Contrast & Modal Styling Fix**:
+   - Corrected `--text-inverse: #F3ECE1;` in `[data-theme="dark"]`, fixing dark-on-black manifesto quote (achieving 16.74:1 WCAG AAA contrast ratio).
+   - Styled `[data-theme="dark"] .modal-dialog` with dark palette surfaces instead of mismatched selector.
+4. **UI/UX Quality-of-Life Improvements**:
+   - Implemented fixed scroll progress bar (`#scroll-progress`) at the top of the viewport.
+   - Implemented floating back-to-top button (`#back-to-top`) with smooth scroll and reduced-motion support.
+   - Optimized image loading: hero images eager-loaded, below-fold images lazy-loaded.
+   - Added visible keyboard focus rings (`:focus-visible` and `:focus-within`) for accessible navigation.
+5. **Documentation & Verification**:
+   - Rewrote `README.md` to comprehensively document all 12 requested sections accurately.
+   - Ran 275-point regression test suite (`scratch/test_regression.js`) — 100% PASS (275/275).
+   - Ran focused final fixes test suite (`scratch/test_final_fixes.js`) — 100% PASS (8/8).
+   - Ran simulated browser DOM/script execution across all 4 pages (`scratch/test_browser_all.js`) — 100% PASS (0 runtime errors).
