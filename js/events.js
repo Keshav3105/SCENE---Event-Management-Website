@@ -260,7 +260,7 @@ function getCategoryBadgeClass(category) {
 function renderEventCardHTML(event) {
   const badgeClass = getCategoryBadgeClass(event.category);
   return `
-    <article class="event-card" data-id="${escapeHTML(event.id)}">
+    <article class="event-card reveal-on-scroll" data-id="${escapeHTML(event.id)}">
       <div class="event-card-media">
         <img src="${escapeHTML(event.image)}"
              alt="${escapeHTML(event.title)}"
@@ -414,6 +414,9 @@ function initEventsCatalogPage() {
     if (typeof initImageFallbacks === 'function') {
       initImageFallbacks();
     }
+    if (typeof initScrollReveal === 'function') {
+      initScrollReveal();
+    }
   }
 
   // Handle live search input
@@ -483,6 +486,11 @@ function initEventDetailsPage() {
   if (categoryBadge) {
     categoryBadge.className = `badge ${getCategoryBadgeClass(event.category)}`;
     categoryBadge.textContent = event.category;
+  }
+
+  const priceBadge = document.getElementById('detail-price-badge');
+  if (priceBadge) {
+    priceBadge.textContent = event.price;
   }
 
   const titleEl = document.getElementById('detail-title');
@@ -567,7 +575,7 @@ function initHomePageFeatured() {
   container.innerHTML = `
     <div class="editorial-events-layout">
       <!-- Flagship Main Card -->
-      <article class="flagship-event-card">
+      <article class="flagship-event-card reveal-on-scroll">
         <div class="flagship-media">
           <img src="${flagship.image}"
                alt="${flagship.title}"
@@ -612,7 +620,7 @@ function initHomePageFeatured() {
       <!-- Supporting Stack -->
       <div class="supporting-events-stack">
         ${supporting.map(supp => `
-          <article class="supporting-event-card">
+          <article class="supporting-event-card reveal-on-scroll">
             <div class="supporting-media">
               <img src="${supp.image}"
                    alt="${supp.title}"
@@ -648,6 +656,10 @@ function initHomePageFeatured() {
   const featuredCountdownEl = document.getElementById('featured-countdown');
   if (featuredCountdownEl && typeof startCountdown === 'function') {
     startCountdown(flagship.date, flagship.time, featuredCountdownEl);
+  }
+
+  if (typeof initScrollReveal === 'function') {
+    initScrollReveal();
   }
 }
 

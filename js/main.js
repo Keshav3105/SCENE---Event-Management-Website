@@ -1,12 +1,89 @@
 /**
  * SCENE - Main Shared Script
- * Handles navigation toggling, active page state, and image fallback management.
+ * Handles navigation toggling, active page state, image fallback management, theme toggling, and scroll reveal animations.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNavigation();
   initImageFallbacks();
+  initThemeToggle();
+  initScrollReveal();
 });
+
+/**
+ * Observes elements with .reveal-on-scroll and triggers reveal animation on viewport entry.
+ * Respects prefers-reduced-motion and gracefully falls back on older browsers.
+ *
+ * @param {HTMLElement|Document} [scope=document] - Container to search for reveal elements.
+ */
+function initScrollReveal(scope = document) {
+  if (typeof window === 'undefined') return;
+
+  // If user prefers reduced motion, reveal immediately without animation
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    scope.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  const targets = scope.querySelectorAll('.reveal-on-scroll:not(.is-revealed)');
+  if (!targets.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  const observer = new window.IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    rootMargin: '0px 0px -30px 0px',
+    threshold: 0.05
+  });
+
+  targets.forEach(el => observer.observe(el));
+}
+
+/**
+ * Initializes Dark / Light theme toggle with LocalStorage persistence and accessibility.
+ */
+function initThemeToggle() {
+  const toggleBtn = document.getElementById('theme-toggle-btn');
+  if (!toggleBtn) return;
+
+  function updateButtonState(theme) {
+    const isDark = theme === 'dark';
+    toggleBtn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    toggleBtn.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+
+  // Sync initial state from current document theme
+  const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  updateButtonState(currentTheme);
+
+  toggleBtn.addEventListener('click', () => {
+    const isCurrentlyDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const nextTheme = isCurrentlyDark ? 'light' : 'dark';
+
+    if (nextTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+
+    try {
+      localStorage.setItem('scene_theme', nextTheme);
+    } catch (e) {
+      // Gracefully handle restricted storage environments
+    }
+
+    updateButtonState(nextTheme);
+  });
+}
 
 /**
  * Initializes mobile hamburger menu toggle with keyboard/accessible attributes.

@@ -263,7 +263,7 @@ function initMyRegistrationsDashboard() {
     }
 
     container.innerHTML = list.map(reg => `
-      <article class="registration-card" data-pass-id="${escapeHTML(reg.id)}">
+      <article class="registration-card reveal-on-scroll" data-pass-id="${escapeHTML(reg.id)}">
         <div class="reg-card-header">
           <span class="reg-id-badge">${escapeHTML(reg.id)}</span>
           <span class="badge ${typeof getCategoryBadgeClass === 'function' ? getCategoryBadgeClass(reg.category) : 'badge-outline'}">${escapeHTML(reg.category)}</span>
@@ -310,6 +310,10 @@ function initMyRegistrationsDashboard() {
         </div>
       </article>
     `).join('');
+
+    if (typeof initScrollReveal === 'function') {
+      initScrollReveal();
+    }
 
     // Wire up cancellation prompts
     container.querySelectorAll('.cancel-pass-trigger').forEach(btn => {

@@ -5,7 +5,6 @@
    Typography: Playfair Display (Serif) + Plus Jakarta Sans (Sans-serif)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap');
 
 :root {
   /* Color Palette */
@@ -221,7 +220,7 @@ button, input, select, textarea {
 .section-subtitle {
   color: var(--text-muted);
   font-size: 1.05rem;
-  max-width: 620px;
+  max-width: 660px;
   margin-top: 0.75rem;
   line-height: 1.6;
 }
@@ -1638,7 +1637,7 @@ button, input, select, textarea {
 }
 
 .modal-dialog {
-  background-color: #FFFFFF;
+  background-color: var(--bg-card);
   border: 1px solid var(--border-card);
   border-radius: var(--radius-lg);
   max-width: 520px;
@@ -1961,5 +1960,342 @@ button, input, select, textarea {
   }
   .count-label {
     font-size: 0.58rem;
+  }
+}
+
+
+/* ==========================================================================
+   Dark / Light Theme System & Navigation Toggle
+   ========================================================================== */
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--bg-surface);
+  border-color: var(--border-strong);
+}
+
+.theme-toggle-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.theme-icon-sun {
+  display: none;
+}
+
+.theme-icon-moon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-icon-sun {
+  display: block;
+}
+
+[data-theme="dark"] .theme-icon-moon {
+  display: none;
+}
+
+/* Dark Theme Custom Properties & Component Styling */
+[data-theme="dark"] {
+  --bg-main: #181412;
+  --bg-surface: #241E1B;
+  --bg-surface-alt: #2D2521;
+  --bg-card: #211B18;
+  --bg-dark: #0D0B0A;
+
+  --text-main: #F3ECE1;
+  --text-muted: #C4B5A8;
+  --text-dim: #9E8F84;
+  --text-inverse: #F3ECE1;
+
+  --primary: #E06A43;
+  --primary-hover: #ED7D57;
+  --primary-subtle: rgba(224, 106, 67, 0.16);
+  --accent-blue: #93B1C2;
+  --accent-blue-subtle: rgba(147, 177, 194, 0.18);
+
+  --border-subtle: #382F2A;
+  --border-strong: #EDE5D8;
+  --border-card: #332B26;
+
+  /* Category Tones for Dark Mode */
+  --cat-tech: #8CB5D4;
+  --cat-tech-bg: rgba(74, 107, 130, 0.28);
+  --cat-cultural: #E06A43;
+  --cat-cultural-bg: rgba(198, 83, 45, 0.28);
+  --cat-sports: #78AA85;
+  --cat-sports-bg: rgba(72, 110, 83, 0.28);
+  --cat-workshop: #C99763;
+  --cat-workshop-bg: rgba(150, 103, 56, 0.28);
+
+  /* Shadows for Dark Mode */
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .site-header {
+  background: rgba(24, 20, 18, 0.94);
+  border-bottom-color: var(--border-subtle);
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .search-input {
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  border-color: var(--border-subtle);
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .search-input:focus {
+  border-color: var(--primary);
+  background-color: var(--bg-surface-alt);
+}
+
+[data-theme="dark"] .form-control[readonly] {
+  background-color: var(--bg-card);
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .modal-dialog,
+[data-theme="dark"] .modal-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .modal-backdrop {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+[data-theme="dark"] .modal-header,
+[data-theme="dark"] .modal-footer {
+  border-color: var(--border-subtle);
+}
+
+[data-theme="dark"] .filter-pill {
+  background-color: var(--bg-surface);
+  color: var(--text-muted);
+  border-color: var(--border-subtle);
+}
+
+[data-theme="dark"] .filter-pill:hover {
+  background-color: var(--bg-surface-alt);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .filter-pill.active {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+}
+
+[data-theme="dark"] .btn-outline {
+  border-color: var(--border-subtle);
+  color: var(--text-main);
+  background-color: transparent;
+}
+
+[data-theme="dark"] .btn-outline:hover {
+  background-color: var(--bg-surface);
+  border-color: var(--border-strong);
+}
+
+[data-theme="dark"] .badge-outline {
+  border-color: var(--border-subtle);
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .photo-frame-primary,
+[data-theme="dark"] .photo-frame-secondary {
+  border-color: var(--border-subtle);
+}
+
+[data-theme="dark"] .hero-stamp {
+  background-color: var(--bg-surface);
+  border-color: var(--border-subtle);
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .manifesto-section {
+  background-color: var(--bg-dark);
+}
+
+[data-theme="dark"] .site-footer {
+  background-color: var(--bg-dark);
+  border-top-color: var(--border-subtle);
+}
+
+[data-theme="dark"] .count-unit {
+  background-color: var(--bg-surface);
+  border-color: var(--border-subtle);
+}
+
+[data-theme="dark"] .sidebar-card .count-unit {
+  background-color: var(--bg-surface-alt);
+}
+
+[data-theme="dark"] .nav-links.is-open {
+  background-color: var(--bg-surface);
+  border-color: var(--border-subtle);
+}
+
+[data-theme="dark"] .alert-banner-error {
+  background-color: rgba(180, 56, 52, 0.2);
+  border-color: rgba(180, 56, 52, 0.4);
+  color: #F5B8B5;
+}
+
+[data-theme="dark"] .alert-banner-success {
+  background-color: rgba(45, 107, 62, 0.2);
+  border-color: rgba(45, 107, 62, 0.4);
+  color: #B8E4C0;
+}
+
+
+/* ==========================================================================
+   Subtle & Restrained Animation System
+   ========================================================================== */
+
+/* Smooth Theme Transitions */
+body,
+.site-header,
+.site-footer,
+.card,
+.event-card,
+.flagship-event-card,
+.supporting-event-card,
+.sidebar-card,
+.form-card,
+.registration-card,
+.modal-dialog,
+.modal-card,
+.count-unit,
+.featured-countdown-wrap,
+.filter-pill,
+.search-input,
+.form-control {
+  transition: background-color var(--transition-normal),
+              border-color var(--transition-normal),
+              color var(--transition-normal),
+              box-shadow var(--transition-normal);
+}
+
+/* Scroll Reveal System */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered card reveals */
+.events-grid .event-card:nth-child(1).is-revealed { transition-delay: 0.04s; }
+.events-grid .event-card:nth-child(2).is-revealed { transition-delay: 0.08s; }
+.events-grid .event-card:nth-child(3).is-revealed { transition-delay: 0.12s; }
+.events-grid .event-card:nth-child(4).is-revealed { transition-delay: 0.16s; }
+.events-grid .event-card:nth-child(5).is-revealed { transition-delay: 0.20s; }
+.events-grid .event-card:nth-child(6).is-revealed { transition-delay: 0.24s; }
+
+.editorial-events-layout .flagship-event-card.is-revealed {
+  transition-delay: 0.05s;
+}
+.supporting-events-stack .supporting-event-card:nth-child(1).is-revealed {
+  transition-delay: 0.1s;
+}
+.supporting-events-stack .supporting-event-card:nth-child(2).is-revealed {
+  transition-delay: 0.16s;
+}
+
+.photo-category-grid .photo-category-card:nth-child(1).is-revealed { transition-delay: 0.05s; }
+.photo-category-grid .photo-category-card:nth-child(2).is-revealed { transition-delay: 0.1s; }
+.photo-category-grid .photo-category-card:nth-child(3).is-revealed { transition-delay: 0.15s; }
+.photo-category-grid .photo-category-card:nth-child(4).is-revealed { transition-delay: 0.2s; }
+
+.strip-grid .strip-card:nth-child(1).is-revealed { transition-delay: 0.04s; }
+.strip-grid .strip-card:nth-child(2).is-revealed { transition-delay: 0.08s; }
+.strip-grid .strip-card:nth-child(3).is-revealed { transition-delay: 0.12s; }
+.strip-grid .strip-card:nth-child(4).is-revealed { transition-delay: 0.16s; }
+.strip-grid .strip-card:nth-child(5).is-revealed { transition-delay: 0.20s; }
+
+/* Interactive Hover Enhancements */
+.btn {
+  transition: transform var(--transition-fast),
+              background-color var(--transition-fast),
+              border-color var(--transition-fast),
+              color var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.filter-pill {
+  transition: transform var(--transition-fast),
+              background-color var(--transition-fast),
+              border-color var(--transition-fast),
+              color var(--transition-fast);
+}
+
+.filter-pill:hover {
+  transform: translateY(-1px);
+}
+
+.nav-link {
+  transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* Reduced Motion Preference - Disables all motion for sensitive users */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .btn:hover,
+  .filter-pill:hover,
+  .event-card:hover,
+  .flagship-event-card:hover,
+  .supporting-event-card:hover,
+  .registration-card:hover {
+    transform: none !important;
   }
 }
