@@ -188,6 +188,33 @@
     </div>
   </footer>
 
+  <!-- Cancellation Confirmation Modal -->
+  <div id="cancel-confirm-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="modal-cancel-title">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modal-cancel-title" class="modal-title">Cancel Registration Pass</h3>
+        <button type="button" class="modal-close-x modal-close-trigger" aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Are you sure you want to cancel your pass for <strong id="cancel-modal-event-title" style="color: var(--text-main);">this event</strong>?
+        </p>
+        <p style="font-size: 0.88rem; color: var(--primary); margin-top: 0.75rem;">
+          Your spot will be released immediately to other students. This action cannot be undone.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline modal-close-trigger">Keep Pass</button>
+        <button type="button" id="confirm-cancel-action-btn" class="btn btn-primary">
+          Yes, Cancel Pass
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/events.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/registration.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

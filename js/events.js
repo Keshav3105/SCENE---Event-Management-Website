@@ -592,9 +592,9 @@ function initHomePageFeatured() {
             </div>
           </div>
           <p class="flagship-desc">${flagship.shortDescription}</p>
-          <div class="flagship-footer">
-            <span class="badge badge-outline">${flagship.price}</span>
-            <a href="event-details.html?id=${encodeURIComponent(flagship.id)}" class="btn btn-primary btn-sm">Explore Details &rarr;</a>
+          <div class="event-card-footer">
+            <span class="event-price-tag">${flagship.price}</span>
+            <a href="event-details.html?id=${encodeURIComponent(flagship.id)}" class="btn btn-primary btn-sm">Details &rarr;</a>
           </div>
         </div>
       </article>
@@ -608,20 +608,20 @@ function initHomePageFeatured() {
                    alt="${supp.title}"
                    loading="lazy"
                    data-fallback="assets/images/placeholder.svg">
-            </div>
-            <div class="supporting-body">
-              <div style="margin-bottom: 0.5rem;">
+              <div class="supporting-badge-wrap">
                 <span class="badge ${getCategoryBadgeClass(supp.category)}">${supp.category}</span>
               </div>
+            </div>
+            <div class="supporting-body">
               <h3 class="supporting-title">${supp.title}</h3>
               <div class="supporting-meta">
                 <span>${supp.datetimeDisplay}</span>
                 <span>${supp.venue}</span>
               </div>
               <p class="supporting-desc">${supp.shortDescription}</p>
-              <div class="supporting-footer">
-                <span style="font-size: 0.85rem; font-weight: 600; color: var(--primary);">${supp.price}</span>
-                <a href="event-details.html?id=${encodeURIComponent(supp.id)}" class="btn btn-subtle btn-sm">Details &rarr;</a>
+              <div class="event-card-footer">
+                <span class="event-price-tag">${supp.price}</span>
+                <a href="event-details.html?id=${encodeURIComponent(supp.id)}" class="btn btn-primary btn-sm">Details &rarr;</a>
               </div>
             </div>
           </article>

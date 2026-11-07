@@ -71,9 +71,9 @@ No build step or package manager is required.
 - [x] **Milestone 4**: Centralized event dataset (`js/events.js`) with sample events and local image mapping.
 - [x] **Milestone 5**: Interactive search, category filters, combined filtering, URL query parameter syncing, and empty state.
 - [x] **Milestone 6**: Dynamic Event Details lookup (`?id=...`) and graceful invalid ID handling.
-- [ ] **Milestone 7**: Registration form validation and UX feedback.
-- [ ] **Milestone 8**: LocalStorage persistence, unique ID generation, and duplicate prevention.
-- [ ] **Milestone 9**: Registrations dashboard and cancellation management.
+- [x] **Milestone 7**: Registration form validation (full name, RFC email, 10-digit Indian phone) and inline UX feedback.
+- [x] **Milestone 8**: Defensive LocalStorage engine (`js/storage.js`), collision-resistant ID generation, and duplicate prevention.
+- [x] **Milestone 9**: Interactive My Registrations dashboard (`registrations.html`) with cancellation confirmation modal and empty state.
 - [ ] **Milestone 10**: Final verification, accessibility audit, and submission prep.
 
 ---

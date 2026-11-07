@@ -150,6 +150,8 @@
           <!-- Static Registration Form Shell -->
           <div class="form-card" id="registration-section">
             <h3 class="sidebar-card-title">Reserve Your Pass</h3>
+
+            <div id="form-alert-banner" class="alert-banner" role="alert"></div>
             
             <form id="event-registration-form" novalidate>
               <div class="form-group">
@@ -226,7 +228,42 @@
     </div>
   </footer>
 
+  <!-- Pass Confirmation Modal -->
+  <div id="registration-success-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="modal-success-title">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modal-success-title" class="modal-title">Pass Confirmed!</h3>
+        <button type="button" class="modal-close-x modal-close-trigger" aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Your spot has been reserved. Present your registration pass code at venue entrance for check-in.</p>
+        
+        <div class="modal-pass-card">
+          <div style="font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em;">Registration Pass ID</div>
+          <div id="modal-pass-id" class="modal-pass-code">SCENE-2026-XXXX</div>
+          
+          <div style="border-top: 1px dashed var(--border-subtle); padding-top: 0.6rem; margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.88rem;">
+            <div><strong style="color: var(--text-main);">Event:</strong> <span id="modal-event-title">Event Title</span></div>
+            <div><strong style="color: var(--text-main);">Attendee:</strong> <span id="modal-attendee-name">Student Name</span></div>
+            <div><strong style="color: var(--text-main);">Schedule:</strong> <span id="modal-event-datetime">Date &amp; Time</span></div>
+            <div><strong style="color: var(--text-main);">Venue:</strong> <span id="modal-event-venue">Venue Name</span></div>
+          </div>
+        </div>
+
+        <p style="font-size: 0.85rem; color: var(--text-dim);">
+          This pass is stored securely in your browser and can be reviewed anytime under My Registrations.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline modal-close-trigger">Close</button>
+        <a href="registrations.html" class="btn btn-primary">View My Passes &rarr;</a>
+      </div>
+    </div>
+  </div>
+
   <script src="js/events.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/registration.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
