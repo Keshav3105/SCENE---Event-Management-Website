@@ -1850,3 +1850,116 @@ button, input, select, textarea {
     text-align: center;
   }
 }
+
+
+/* ==========================================================================
+   Event Countdown Timer Component
+   ========================================================================== */
+.featured-countdown-wrap {
+  margin: 1.25rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.countdown-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+}
+
+.detail-countdown-wrap {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.countdown-units {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.count-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.65rem;
+  min-width: 62px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.sidebar-card .count-unit {
+  background-color: var(--bg-surface);
+}
+
+.count-value {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-main);
+}
+
+.count-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.countdown-ended {
+  display: inline-block;
+  padding: 0.5rem 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background-color: var(--bg-surface);
+  border: 1px dashed var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.countdown-unavailable {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+@media (max-width: 480px) {
+  .featured-countdown-wrap {
+    width: 100%;
+    padding: 0.85rem 1rem;
+  }
+  .countdown-units {
+    gap: 0.4rem;
+  }
+  .count-unit {
+    min-width: 54px;
+    padding: 0.4rem 0.45rem;
+    flex: 1;
+  }
+  .count-value {
+    font-size: 1.15rem;
+  }
+  .count-label {
+    font-size: 0.58rem;
+  }
+}

@@ -520,8 +520,14 @@ function initEventDetailsPage() {
   }
 
   // Reattach image fallback
-  if (typeof initImageFallbacks === 'function') {
+    if (typeof initImageFallbacks === 'function') {
     initImageFallbacks();
+  }
+
+  // Initialize countdown for selected event
+  const detailCountdownEl = document.getElementById('detail-countdown');
+  if (detailCountdownEl && typeof startCountdown === 'function') {
+    startCountdown(event.date, event.time, detailCountdownEl);
   }
 }
 
@@ -591,6 +597,10 @@ function initHomePageFeatured() {
               <span>${flagship.venue}</span>
             </div>
           </div>
+                    <div class="featured-countdown-wrap">
+            <span class="countdown-eyebrow">Event Starts In</span>
+            <div id="featured-countdown" class="countdown-units" aria-live="polite"></div>
+          </div>
           <p class="flagship-desc">${flagship.shortDescription}</p>
           <div class="event-card-footer">
             <span class="event-price-tag">${flagship.price}</span>
@@ -630,8 +640,14 @@ function initHomePageFeatured() {
     </div>
   `;
 
-  if (typeof initImageFallbacks === 'function') {
+    if (typeof initImageFallbacks === 'function') {
     initImageFallbacks();
+  }
+
+  // Initialize countdown for flagship featured event
+  const featuredCountdownEl = document.getElementById('featured-countdown');
+  if (featuredCountdownEl && typeof startCountdown === 'function') {
+    startCountdown(flagship.date, flagship.time, featuredCountdownEl);
   }
 }
 
